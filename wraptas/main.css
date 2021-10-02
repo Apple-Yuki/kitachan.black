@@ -1,0 +1,228 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.notion-callout[data-hascontent="true"] .notion-callout-text {
+  overflow: hidden;
+}
+
+.notion-asset-wrapper iframe {
+  background-color: var(--bg-color-1);
+}
+
+.notion-asset-caption {
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+}
+
+.page-_top .titleSection {
+  display: none;
+}
+
+.pageIcon-cover.emoji {
+  display: none;
+}
+
+.pageIconSpacer {
+  display: none;
+}
+
+.contents {
+  padding-top: 1em;
+}
+
+:root {
+  /* ヘッダーの高さ */
+  --header-height: 80px;
+}
+
+.header__img {
+  height: calc(var(--header-height) - 20px);
+}
+
+.notion-hr {
+  border-color: var(--notion-purple);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+}
+
+.page {
+  padding-top: var(--header-height);
+}
+
+.notion {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.container {
+  max-width: 100%;
+}
+
+.contents {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header__contentsWrapper {
+  max-width: 1100px;
+}
+
+.notion-h1,
+.notion-h2 {
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  margin: 16px auto 0;
+  text-align: center;
+}
+
+.notion-h2 {
+  border-bottom: 2px solid var(--notion-orange);
+  margin-bottom: 32px;
+}
+
+.contents .notion-asset-wrapper-image img {
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.notion-h1 b,
+.notion-h2 b {
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .notion-h1,
+  .notion-h2 {
+    font-size: 1.4rem;
+  }
+  .notion-h1 b,
+  .notion-h2 b {
+    font-size: 1.9rem;
+  }
+}
+
+.notion-h2::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--notion-orange);
+  border-right: 2px solid var(--notion-orange);
+  background-color: var(--bg-color);
+  transform: rotate(135deg) translateY(50%);
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+}
+
+.header a[href*="https://twitter.com/oliver_uma"]
+{
+  font-family: ForkAwesome;
+  background-color: #1da1f2;
+  border-radius: 64px;
+  border: none;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 12px 1px;
+  box-sizing: border-box;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.notion-collection-card-cover {
+  height: 220px;
+}
+
+.header a[href*="https://twitter.com/oliver_uma"]:hover
+{
+  opacity: 0.75;
+}
+
+.header a[href*="https://twitter.com/oliver_uma"]::before
+{
+  content: "\f099";
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+
+/* シェアボタンが最後尾のコンテンツとかぶるのを防ぐ */
+.page {
+  padding-bottom: 40px;
+}
+.shareBtns {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  z-index: 9;
+}
+.shareBtns__tw {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+.shareBtns__tw__icon {
+  margin: 0;
+}
+.shareBtns__tw__text {
+  display: none;
+}
+
+.notion-bookmark > div:first-child {
+  flex: 6 1 180px;
+}
+
+.notion-bookmark-description {
+  height: 64px;
+}
+
+/* https://demo.anotion.so/bookmark_twittercard */
+@media (max-width: 640px) {
+  .notion-bookmark {
+    border-radius: 12px;
+    flex-direction: column-reverse;
+  }
+  .notion-bookmark > div:first-child {
+    flex: 4 1;
+  }
+  .notion-bookmark-description {
+    display: none;
+  }
+  .notion-bookmark-image {
+    display: block;
+    width: 100%;
+  }
+}
+
+.pageIcon-cover {
+  display: none;
+}
